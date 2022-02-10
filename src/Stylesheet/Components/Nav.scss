@@ -1,0 +1,100 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  z-index: 9;
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+
+    &__left,
+    &__right {
+      display: flex;
+      align-items: center;
+    }
+
+    &__left {
+      width: 220px;
+      justify-content: space-between;
+    }
+
+    &__left-right {
+      display: flex;
+      align-items: center;
+
+      & > p {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.4rem;
+
+    &__left,
+    &__right,
+    &__left-right,
+    &__right-left,
+    &__right-right {
+      display: flex;
+      align-items: center;
+    }
+
+    &__left-right {
+      margin-top: 0.5rem;
+      margin-left: 1.5rem;
+
+      & > p {
+        margin-left: 1rem;
+        color: #555151;
+      }
+      & > P:hover {
+        cursor: pointer;
+        border-bottom: 1px solid black;
+        color: black;
+      }
+    }
+
+    &__right-right > .cart-count {
+      margin-top: 0.5rem;
+      background-color: black;
+      color: white;
+      height: 100%;
+      width: 20px;
+      text-align: center;
+      border-radius: 999px;
+      z-index: 1;
+    }
+  }
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.help-icon {
+  margin-right: 0.5rem;
+}
+
+.nav-bottom__right-link {
+  margin-right: 1rem;
+}
+
+.nav-separator {
+  font-size: 23px;
+  font-weight: 400;
+  color: #615c5c;
+}
+
+.cart-icon {
+  z-index: -1;
+}

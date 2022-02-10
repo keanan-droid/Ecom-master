@@ -1,0 +1,129 @@
+.footer {
+    margin-top: 0.5em;
+    background-color: rgb(247, 247, 247);
+    font-size: 1em;
+
+    .upper_footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 2em 4em;
+        height: 350px;
+
+        .firstDiv {
+
+            & > p {
+                margin-bottom: 0.5em;
+
+            }
+            
+            & > p:first-child {
+                font-weight: 600;
+            }
+
+            & > div {
+                display: flex;
+                margin-top: 1em;
+
+                .emailIcon {
+                    padding-right: 0.2em;
+                }
+
+                .chatIcon {
+                    padding-right: 0.2em;
+                }
+
+                .roomIcon {
+                    padding-right: 0.2em;
+                }
+
+                p:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .secondDiv {
+            
+            p {
+                padding-bottom: 0.5em;
+            }
+            p:hover {
+                cursor: pointer;
+            }
+
+            p:first-child {
+                font-weight: 600;
+            }
+        }
+
+        .thirdDiv {
+             
+            p {
+                padding-bottom: 0.5em;
+            }
+            p:hover {
+                cursor: pointer;
+            }
+
+            p:first-child {
+                font-weight: 600;
+            }
+        }
+
+        .fourthDiv {
+             
+            p {
+                padding-bottom: 0.5em;
+            }
+            p:hover {
+                cursor: pointer;
+            }
+
+            p:first-child {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .middle_footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1.5em;
+        border-bottom: 1px solid rgb(209, 209, 209);
+        border-top: 1px solid rgb(209, 209, 209);
+        padding: 1.6em 4em;
+
+        .iconDiv {
+
+            .facebookIcon {
+                margin-right: 1em;
+            }
+
+            .twitterIcon {
+                margin-right: 1em;
+            }
+
+            .instagramIcon {
+                margin-right: 1em;
+            }
+
+            .youtubeIcon {
+                margin-right: 1em;
+            }
+        }
+
+         span {
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .lower_footer {
+        padding: 2em 0;
+        display: flex;
+        justify-content: center;
+
+        span {
+            border-bottom: 1px solid black;
+        }
+    }
+}

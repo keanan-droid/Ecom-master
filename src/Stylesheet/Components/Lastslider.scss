@@ -1,0 +1,35 @@
+.card {
+    border-radius: 1em;
+    padding: 1em;
+    width: 1100px;
+    margin-bottom: 5em;
+    height: 479px;
+
+    .p-tags {
+        margin-top: -10em;
+        padding-left: 1.5em;
+    }
+
+    .title {
+        font-size: 1em;
+    }
+    .heading {
+        font-size: 1.2em;
+        padding-top: 1em;
+    }
+    .heading2 {
+        font-size: 1.2em;
+    }
+    .button {
+        font-size: 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid white;
+    }
+
+
+    & > .slider-img {
+        height: 540px;
+        border-radius: 1em;
+    }
+}

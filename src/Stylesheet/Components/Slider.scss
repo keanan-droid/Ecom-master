@@ -1,0 +1,51 @@
+.sliderbar {
+  background-color: rgb(245, 243, 243);
+}
+.imageSlider {
+
+  .slider-img {
+    padding-top: 6em;
+    height: 400px;
+    width: 300px;
+    object-fit: cover;
+  }
+}
+
+.slider-img {
+  height: 400px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.mini-sliderbar {
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.img-name {
+  padding: 1em;
+  text-align: center;
+  margin-top: 0.7em;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+}
+.img-price {
+  display: flex;
+  justify-content: center;
+}
+.lcUbOd  {
+  box-shadow: 0 0 1px 3px rgb(0, 0, 0);
+}
+.izuVIe {
+  padding-top: 3em;
+}
+
+.banner_collection {
+  display: flex;
+  background-color: rgb(241, 240, 240);
+  margin-top: 1em;
+  height: 648px;
+  
+}
