@@ -2,7 +2,7 @@ import React from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import "../Stylesheet/Components/LoginSiderBar.scss";
 
-export const LoginSiderBar = () => {
+export const LoginSiderBar = ({isSideBarOpen, setIsSideBarOpen}) => {
 
   const [inputEmail, setInputEmail] = React.useState("");
 
@@ -10,6 +10,10 @@ export const LoginSiderBar = () => {
     const newEmail = e.target.value;
     setInputEmail(newEmail);
     console.log(inputEmail);
+  };
+
+  const toggleSideBar = () => {
+    setIsSideBarOpen(!isSideBarOpen);
   }
   return (
     <div className="LoginSiderBar">
@@ -17,7 +21,7 @@ export const LoginSiderBar = () => {
         <div>
           <div>
             <h1>Login</h1>
-            <CloseIcon className="closeIcon" />
+            <CloseIcon className="closeIcon" onClick={toggleSideBar}/>
           </div>
           <p>If you are a registered user, please enter your email and password</p>
           <input type="text" placeholder="Email" onChange={email}/>

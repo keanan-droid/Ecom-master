@@ -5,7 +5,6 @@ import { Slider } from "../Components/Slider";
 import { Lastslider } from "../Components/Lastslider"
 import { Footer } from "../Components/Footer";
 import "../Stylesheet/Pages/Home.scss";
-import { BrowserRouter as Router, Route, Routes, link } from "react-router-dom";
 
 
 export const Home = () => {
