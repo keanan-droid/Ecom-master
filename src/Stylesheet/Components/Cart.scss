@@ -1,0 +1,85 @@
+.CartSiderBar {
+    height: 100vh;
+    width: 100%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: black;
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+  
+    .cart {
+        background: white;
+        padding: 1em;
+        height: 100%;
+        width: 30%;
+        float: right;
+        animation: slideFromLeftToRight 2s ease-in;
+
+        .cart_one {
+            & > div {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5em;
+                font-size: 0.75em;
+
+                .closeIcon {
+                    cursor: pointer;
+                }
+            }
+
+            & > h2 {
+                font-size: 0.8em;
+                text-align: center;
+            }
+        }
+
+        .register {
+            margin-top: 17.4em;
+
+            & > h1 {
+                font-size: 0.9em;
+                text-align: center;
+                margin-bottom: 1em;
+                font-weight: 500;
+            }
+
+            & > p {
+                font-size: 0.9em;
+                text-align: center;
+            }
+
+            & > button {
+                font-size: 0.9em;
+                text-align: center;
+                margin-bottom: 1em;
+                color: white;
+                background-color: black;
+            }
+            & > button:hover {
+                cursor: pointer;
+                background-color: white;
+                color: black;
+            }
+
+            .register_text {
+                border-bottom: 1px solid black;
+                margin-left: 7.5em;
+                margin-right: 7.5em;
+            }
+            .register_text:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@keyframes slideFromLeftToRight {
+    0% {
+      transform: translateX(500px);
+    }
+  
+    100% {
+      transform: translateX(0px);
+    }
+  }

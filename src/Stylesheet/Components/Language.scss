@@ -1,0 +1,84 @@
+.languageMenu {
+    height: 100vh;
+    width: 100%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: black;
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+  
+    .language_section {
+      background: white;
+      padding: 1em;
+      height: 100%;
+      width: 30%;
+      float: right;
+      animation: slideFromLeftToRigh 2s ease-in;
+
+        & > div {
+            display: flex;
+            justify-content: space-between;
+
+            & > h1 {
+                font-size: 1.3em;
+                color: rgb(58, 58, 58);
+                margin-bottom: 0.6em;
+                font-weight: 300;
+            }
+
+            .closeIcon:hover {
+                cursor: pointer;
+            }
+        }
+
+        & > p {
+            font-size: 0.9em;
+            color: rgb(58, 58, 58);
+            margin-bottom: 0.6em;
+            font-weight: 500;
+        }
+
+        .box-col {
+
+            .left_col {
+                overflow: auto;
+
+                & > h1 {
+                    font-size: 1.3em;
+                    color: rgb(58, 58, 58);
+                    margin-top: 0.6em;
+                    margin-bottom: 0.6em;
+                    font-weight: 300;
+                }
+
+                & > p {
+                    font-size: 0.9em;
+                    color: rgb(58, 58, 58);
+                    margin-bottom: 0.6em;
+                    font-weight: 500;
+                }
+                
+            }
+
+            .right_col {
+
+                & > h1 {
+                    font-size: 1.3em;
+                    color: rgb(58, 58, 58);
+                    margin-bottom: 0.6em;
+                    margin-top: 0.6em;
+                    font-weight: 300;
+                }
+
+                & > p {
+                    font-size: 0.9em;
+                    color: rgb(58, 58, 58);
+                    margin-bottom: 0.6em;
+                    font-weight: 500;
+                }
+
+            }
+        }
+    }
+}  

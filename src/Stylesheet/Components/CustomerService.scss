@@ -1,0 +1,121 @@
+.customer_service {
+
+    .middle_section {
+        display: flex;
+        padding-top: 9em;
+        color: rgb(65, 65, 65);
+        padding-left: 9em;
+
+        .left_bar {
+            font-size: 0.4em;
+            font-weight: 300;
+            width: 250px;
+            padding-right: 2em;
+
+            & > h1 {
+                padding-bottom: 2.1em;
+            }
+        }
+
+        .right_bar {
+            width: 650px;
+
+            & > div {
+                margin-bottom: 4em;
+
+                & > h1 {
+                    font-weight: 300;
+                    font-size: 1.1em;
+                    padding-top: 0.3em;
+                    margin-bottom: 1em;
+                }
+
+                & > p {
+                    font-weight: 300;
+                    font-size: 0.8em;
+                    letter-spacing: 1.1px;
+                }
+            }
+
+            & > h1 {
+                font-size: 0.9em;
+                font-weight: 300;
+                margin-bottom: 0.4em;
+            }
+
+            & > p {
+                font-size: 0.8em;
+                font-weight: 300;
+                margin-bottom: 2.5em;
+                letter-spacing: 1.1px;
+            }
+        }
+    }
+
+    .bottom_section {
+        display: flex;
+        color: rgb(65, 65, 65);
+        margin: 3em 7.9em 3em 14.8em;
+        padding: 2em 0 0 7em;
+        border-top: 1px solid rgb(187, 187, 187);
+
+        .left_box {
+            display: flex;
+
+            .chatIcon {
+                margin: 1.3em 1em 0 0;
+            }
+
+            & > div {
+
+                & > h1 {
+                    font-size: 1.3em;
+                    font-weight: 300;
+                }
+    
+                & > h2 {
+                    font-size: 1em;
+                    font-weight: 300; 
+                }
+    
+                & > p {
+                    font-size: 0.9em;
+                    padding-top: 3px;
+                    color: rgb(82, 82, 82);
+                }
+            }
+        }
+
+        .right_box {
+            display: flex;
+            padding-left: 10em;
+
+            .mailIcon {
+                margin: 1.3em 1em 0 0;
+            }
+
+            & > div {
+
+                & > h1 {
+                    font-size: 1.3em;
+                    font-weight: 300;
+                }
+    
+                & > h2 {
+                    font-size: 1em;
+                    font-weight: 300; 
+                }
+    
+                & > p {
+                    font-size: 0.9em;
+                    padding-top: 3px;
+                    color: rgb(82, 82, 82);
+                }
+
+                & > a {
+                    color: rgb(82, 82, 82);
+                }
+            }
+        }
+    }
+}

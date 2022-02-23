@@ -13,12 +13,16 @@ import { Women } from "./Women";
 import { Men } from "./Men";
 import { Children } from "./Children";
 import { Gifts } from "./Gifts";
+import { Cart } from "./Cart";
+import { Language } from "./Language";
 import "../Stylesheet/Components/Nav.scss";
 
 export const Nav = () => {
 
+  const [isLanguageBarOpen, setIsLanguageBarOpen] = React.useState(false);
   const [isSearchBarMenuOpen, setIsSearchBarMenuOpen] = React.useState(false);
   const [isSideBarOpen, setIsSideBarOpen] = React.useState(false);
+  const [isCartSideBarOpen, setIsCartSideBarOpen] = React.useState(false);
   const [isNewMenuOpen, setIsNewMenuOpen] = React.useState(false);
   const [isWomenMenuOpen, setIsWomenMenuOpen] = React.useState(false);
   const [isMenMenuOpen, setIsMenMenuOpen] = React.useState(false);
@@ -48,9 +52,17 @@ export const Nav = () => {
   const sliderGiftsMenu = () => {
     setIsGiftsMenuOpen(!isGiftsMenuOpen)
   }
+
+  const sliderLanguageBar = () => {
+    setIsLanguageBarOpen(!isLanguageBarOpen)
+  }
   
   const sliderSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen)
+  }
+
+  const sliderCartSideBar = () => {
+    setIsCartSideBarOpen(!isCartSideBarOpen)
   }
 
   return (
@@ -60,7 +72,7 @@ export const Nav = () => {
           <LocationOnIcon className="icon" />
           <span>|</span>
           <div className="nav-top__left-right">
-            <LanguageIcon className="icon"/>
+            <LanguageIcon onClick={sliderLanguageBar} className="icon"/>
             <p>English / South Africa</p>
           </div>
         </div>
@@ -91,10 +103,11 @@ export const Nav = () => {
             className="nav-bottom__right-link icon"
             onClick={sliderSideBar}
           />
-          <FavoriteIcon className="nav-bottom__right-link icon" />
+          <FavoriteIcon className="nav-bottom__right-link icon" onClick={sliderSideBar} />
           <div className="nav-bottom__right-right nav-bottom__right-link">
             <div>
-              <ShoppingBagIcon className="cart-icon icon" />
+              <ShoppingBagIcon className="cart-icon icon" 
+              onClick={sliderCartSideBar}/>
             </div>
             <p className="cart-count">0</p>
           </div>
@@ -108,6 +121,8 @@ export const Nav = () => {
       {isChildrenMenuOpen ? <Children isChildrenMenuOpen={isChildrenMenuOpen} setIsChildrenMenuOpen={setIsChildrenMenuOpen} /> : null}
       {isGiftsMenuOpen ? <Gifts isGiftsMenuOpen={isGiftsMenuOpen} setIsGiftsMenuOpen={setIsGiftsMenuOpen} /> : null}
       {isSideBarOpen ? <LoginSiderBar isSideBarOpen={isSideBarOpen} setIsSideBarOpen={setIsSideBarOpen} /> : null}
+      {isLanguageBarOpen ? <Language isLanguageBarOpen={isLanguageBarOpen} setIsLanguageBarOpen={setIsLanguageBarOpen} /> : null}
+      {isCartSideBarOpen ? <Cart isCartSideBarOpen={isCartSideBarOpen} setIsCartSideBarOpen={setIsCartSideBarOpen} /> : null}
     </nav>
   );
 };
