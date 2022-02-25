@@ -8,6 +8,7 @@ import "../Stylesheet/Pages/Home.scss";
 
 
 export const Home = () => {
+
   const mainBanner = [
     {
       img: "/Assets/image1.jpeg",

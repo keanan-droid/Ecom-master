@@ -4,7 +4,7 @@ import "../Stylesheet/Components/Women.scss";
 
 export const Women = ({ isWomenMenuOpen, setIsWomenMenuOpen }) => {
 
-    const toggleMainBar = ({ isWomenMenuOpen, setIsWomenMenuOpen }) => {
+    const toggleMainBar = () => {
         setIsWomenMenuOpen(!isWomenMenuOpen);
     }
 

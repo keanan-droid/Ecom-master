@@ -1,11 +1,7 @@
 import React from "react";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import LanguageIcon from "@mui/icons-material/Language";
-import HelpIcon from "@mui/icons-material/Help";
-import SearchIcon from "@mui/icons-material/Search";
-import PersonIcon from "@mui/icons-material/Person";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import { BsBag, BsHeart, BsPerson, BsSearch, BsGlobe } from "react-icons/bs";
+import { GrLocation } from "react-icons/gr";
+import { FiHelpCircle } from "react-icons/fi";
 import { SearchBar } from "./SearchBar";
 import { LoginSiderBar } from "./LoginSiderBar";
 import { NewIn } from "../Components/NewIn";
@@ -15,6 +11,7 @@ import { Children } from "./Children";
 import { Gifts } from "./Gifts";
 import { Cart } from "./Cart";
 import { Language } from "./Language";
+import { useNavigate } from "react-router-dom";
 import "../Stylesheet/Components/Nav.scss";
 
 export const Nav = () => {
@@ -29,28 +26,50 @@ export const Nav = () => {
   const [isChildrenMenuOpen, setIsChildrenMenuOpen] = React.useState(false);
   const [isGiftsMenuOpen, setIsGiftsMenuOpen] = React.useState(false);
   
+  const navigate = useNavigate();
+
   const sliderSearchBarMenu = () => {
     setIsSearchBarMenuOpen(!isSearchBarMenuOpen)
   }
 
   const sliderNewMenu = () => {
     setIsNewMenuOpen(!isNewMenuOpen)
+    setIsWomenMenuOpen(false);
+    setIsMenMenuOpen(false);
+    setIsChildrenMenuOpen(false);
+    setIsGiftsMenuOpen(false);
   }
 
   const sliderWomenMenu = () => {
     setIsWomenMenuOpen(!isWomenMenuOpen)
+    setIsNewMenuOpen(false);
+    setIsMenMenuOpen(false);
+    setIsChildrenMenuOpen(false);
+    setIsGiftsMenuOpen(false);
   }
 
   const sliderMenMenu = () => {
     setIsMenMenuOpen(!isMenMenuOpen)
+    setIsNewMenuOpen(false);
+    setIsWomenMenuOpen(false);
+    setIsChildrenMenuOpen(false);
+    setIsGiftsMenuOpen(false);
   }
 
   const sliderChildrenMenu = () => {
     setIsChildrenMenuOpen(!isChildrenMenuOpen)
+    setIsNewMenuOpen(false);
+    setIsWomenMenuOpen(false);
+    setIsMenMenuOpen(false);
+    setIsGiftsMenuOpen(false);
   }
 
   const sliderGiftsMenu = () => {
     setIsGiftsMenuOpen(!isGiftsMenuOpen)
+    setIsNewMenuOpen(false);
+    setIsWomenMenuOpen(false);
+    setIsMenMenuOpen(false);
+    setIsChildrenMenuOpen(false);
   }
 
   const sliderLanguageBar = () => {
@@ -65,19 +84,23 @@ export const Nav = () => {
     setIsCartSideBarOpen(!isCartSideBarOpen)
   }
 
+  const redirect = (path) => {
+    navigate(path);
+  }
+
   return (
     <nav className="nav">
       <div className="nav-top">
         <div className="nav-top__left">
-          <LocationOnIcon className="icon" />
+          <GrLocation className="icon" />
           <span>|</span>
           <div className="nav-top__left-right">
-            <LanguageIcon onClick={sliderLanguageBar} className="icon"/>
+            <BsGlobe onClick={sliderLanguageBar} className="icon"/>
             <p>English / South Africa</p>
           </div>
         </div>
         <div className="nav-top__right">
-          <HelpIcon className="help-icon icon" />
+          <FiHelpCircle className="help-icon icon" onClick={() => redirect("/customer-care")}/>
           <p>Customer Service</p>
         </div>
       </div>
@@ -95,18 +118,18 @@ export const Nav = () => {
         <div className="nav-bottom__right">
           <div className="nav-bottom__right-left nav-bottom__right-link"
            onClick={sliderSearchBarMenu}>
-            <SearchIcon className="icon" />
+            <BsSearch className="icon search" />
             <p>Search</p>
           </div>
           <span className="nav-bottom__right-link nav-separator">|</span>
-          <PersonIcon
-            className="nav-bottom__right-link icon"
+          <BsPerson
+            className="nav-bottom__right-link icon person"
             onClick={sliderSideBar}
           />
-          <FavoriteIcon className="nav-bottom__right-link icon" onClick={sliderSideBar} />
+          <BsHeart className="nav-bottom__right-link icon heart" onClick={sliderSideBar} />
           <div className="nav-bottom__right-right nav-bottom__right-link">
             <div>
-              <ShoppingBagIcon className="cart-icon icon" 
+              <BsBag className="cart-icon icon" 
               onClick={sliderCartSideBar}/>
             </div>
             <p className="cart-count">0</p>

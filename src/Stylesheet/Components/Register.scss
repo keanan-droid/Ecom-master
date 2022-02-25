@@ -36,19 +36,19 @@
 
         & > div {
             display: flex;
-            width: 600px;
-            margin-left: 15em;
+            width: 457px;
+            margin-left: 32em;
             justify-content: space-between;
             padding-bottom: 1em;
             
             & > p {
-                font-size: 1.0em;
+                font-size: 0.9em;
+                margin-top: 1em;
             }
 
             & > input {
-                height: 50px;
-                width: 300px;
-                margin-left: -1em;
+                height: 45px;
+                width: 325px;
             }
         }
     }
@@ -56,22 +56,29 @@
     small {
         display: flex;
         justify-content: center;
-        margin-left: 10em;
+        margin-left: 27em;
     }
 
     & > .registerForm_three {
         margin-top: 2em;
-        margin-left: 15.5em;
-        width: 600px;
+        margin-left: 32em;
+        width: 457px;
         
         & > h2 {
             font-size: 1em;
+            font-weight: 100;
+        }
+
+        & > p {
+            font-size: 0.9em;
+            font-weight: 100;
+            line-height: 25px;
         }
     }
 
     & > .registerForm_four {
         display: flex;
-        margin-left: 15.5em;
+        margin-left: 32em;
 
         & > div {
             display: flex;
@@ -87,7 +94,7 @@
 
     & > .registerForm_five {
         display: flex;
-        margin-left: 15.5em;
+        margin-left: 32em;
         margin-top: 2em;
         width: 400px;
     }
@@ -97,7 +104,8 @@
         & > button {
             display: flex;
             justify-content: center;
-            margin-left: 45em;
+            margin-left: 53em;
+            margin-top: 2em;
             padding: 0.8em;
             width: 123px;
             font-size: 1em;

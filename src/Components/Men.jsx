@@ -4,7 +4,7 @@ import "../Stylesheet/Components/Men.scss";
 
 export const Men = ({ isMenMenuOpen, setIsMenMenuOpen }) => {
 
-    const toggleMainBar = ({ isMenMenuOpen, setIsMenMenuOpen }) => {
+    const toggleMainBar = () => {
         setIsMenMenuOpen(!isMenMenuOpen);
     }
 

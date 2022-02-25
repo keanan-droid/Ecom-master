@@ -68,15 +68,37 @@
 
     &__right-right > .cart-count {
       margin-top: 0.5rem;
+      margin-left: -7px;
+      font-size: 10px;
       background-color: black;
       color: white;
       height: 100%;
-      width: 20px;
+      width: 13px;
       text-align: center;
       border-radius: 999px;
       z-index: 1;
     }
   }
+}
+
+.search {
+  margin-right: 0.2em;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.person {
+  font-size: 23px;
+}
+
+.heart {
+  font-size: 19px;
+}
+
+.cart-icon {
+  font-size: 19px;
 }
 
 .icon:hover {

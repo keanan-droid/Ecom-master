@@ -2,6 +2,56 @@ import React from 'react'
 import "../Stylesheet/Components/Register.scss";
 
 export const Register = () => {
+
+    const [inputEmail, setInputEmail] = React.useState("");
+    const [inputTitle, setInputTitle] = React.useState("");
+    const [inputTos, setInputTos] = React.useState("");
+
+    let email = (e) => {
+        const newEmail = e.target.value;
+        setInputEmail(newEmail);
+    };
+
+    let title = (e) => {
+        const newTitle = e.target.value;
+        setInputTitle(newTitle);
+    };
+
+    let tos = (e) => {
+        const newTos = e.target.value;
+        setInputTos(newTos);
+    };
+
+    async function postData(url = 'db.json', data = {}) {
+        const response = await fetch(url, {
+          method: 'POST',
+          body: JSON.stringify({
+            userId: "",
+            title: inputTitle,
+            email: inputEmail,
+            tos: inputTos
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        return response.json()
+    }
+
+    React.useEffect(() => {
+        fetch("http://localhost:3004/accounts")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+        console.log(JSON.stringify(data));
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    });
+
   return (
     <main className='registerForm'>
         <div className='registerForm_one'>
@@ -17,23 +67,11 @@ export const Register = () => {
         <div className='registerForm_two'>
             <div className='form_one'>
                 <p>Title</p>
-                <input type="text" />
+                <input type="text" id='title' onChange={title}/>
             </div>
             <div className='form_two'>
                 <p>Email</p>
-                <input type="email" />
-            </div>
-            <div className='form_three'>
-                <p>Confirm email</p>
-                <input type="email" />
-            </div>
-            <div className='form_four'>
-                <p>Password</p>
-                <input type="password" />
-            </div>
-            <div className='form_five'>
-                <p>Confirm password</p>
-                <input type="password" />
+                <input type="email" id='email' onChange={email}/>
             </div>
         </div>
         <small>ALL FORM FIELDS ARE MANDATORY</small>
@@ -43,19 +81,19 @@ export const Register = () => {
         </div>
         <div className='registerForm_four'>
             <div>
-                <input type="checkbox" />
-                <p>I agree</p>  
+                <input type="checkbox" onChange={tos}/>
+                <p id='tos'>I agree</p>  
             </div>
             <div>
-                <input type="checkbox" />
-                <p>I don't agree</p> 
+                <input type="checkbox" onChange={tos}/>
+                <p id='tos'>I don't agree</p> 
             </div>
         </div>
         <div className='registerForm_five'>
             <p>On subscription you accept our<span>Privacy Policy</span></p>
         </div>
         <div className='registerForm_six'>
-            <button>Apply</button>
+            <button onChange={postData}>Apply</button>
         </div>
     </main>
   )

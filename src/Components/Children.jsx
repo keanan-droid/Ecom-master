@@ -4,7 +4,7 @@ import "../Stylesheet/Components/Children.scss";
 
 export const Children = ({ isChildrenMenuOpen, setIsChildrenMenuOpen }) => {
 
-  const toggleMainBar = ({ isChildrenMenuOpen, setIsChildrenMenuOpen }) => {
+  const toggleMainBar = () => {
     setIsChildrenMenuOpen(!isChildrenMenuOpen);
 }
 

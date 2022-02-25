@@ -1,10 +1,13 @@
 import React from "react";
 import CloseIcon from '@mui/icons-material/Close';
+import { useNavigate } from "react-router-dom";
 import "../Stylesheet/Components/LoginSiderBar.scss";
 
 export const LoginSiderBar = ({isSideBarOpen, setIsSideBarOpen}) => {
 
   const [inputEmail, setInputEmail] = React.useState("");
+  const [inputPassword, setInputPassword] = React.useState("");
+  const navigate = useNavigate();
 
   let email = (e) => {
     const newEmail = e.target.value;
@@ -12,9 +15,19 @@ export const LoginSiderBar = ({isSideBarOpen, setIsSideBarOpen}) => {
     console.log(inputEmail);
   };
 
+  let password = (e) => {
+    const newPassword = e.target.value;
+    setInputPassword(newPassword);
+};
+
   const toggleSideBar = () => {
     setIsSideBarOpen(!isSideBarOpen);
   }
+
+  const redirect = (path) => {
+    navigate(path);
+  }
+
   return (
     <div className="LoginSiderBar">
       <div className="login">
@@ -25,14 +38,15 @@ export const LoginSiderBar = ({isSideBarOpen, setIsSideBarOpen}) => {
           </div>
           <p>If you are a registered user, please enter your email and password</p>
           <input type="text" placeholder="Email" onChange={email}/>
-          <input type="text" placeholder="Password" />
+          <input type="text" placeholder="Password" onChange={password}/>
           <div className="checkbox">
             <input type="checkbox" name="" id="" />
             <p>Remeber me</p>
           </div>
           <div className="forget">
             <button>Login</button>
-            <span>Forget my password</span>
+            <span onClick={() => redirect("/reset-password")}>
+              Forget my password</span>
           </div>
         </div>
         <div className="register">
@@ -42,7 +56,7 @@ export const LoginSiderBar = ({isSideBarOpen, setIsSideBarOpen}) => {
             <span>Manage your order history</span>
             <span>Gain access to your Wishlist</span>
           </div>
-          <button>Register now</button>
+          <button onClick={() => redirect("/register")}>Register now</button>
         </div>
       </div>
 

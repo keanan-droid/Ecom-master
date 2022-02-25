@@ -4,7 +4,7 @@ import "../Stylesheet/Components/Gifts.scss";
 
 export const Gifts = ({ isGiftsMenuOpen, setIsGiftsMenuOpen }) => {
 
-  const toggleMainBar = ({ isGiftsMenuOpen, setIsGiftsMenuOpen }) => {
+  const toggleMainBar = () => {
     setIsGiftsMenuOpen(!isGiftsMenuOpen);
 }
 
