@@ -35,7 +35,7 @@ export const Register = () => {
             userId: "",
             title: inputTitle,
             email: inputEmail,
-            password: "",
+            password: inputPassword,
             tos: inputTos
           }),
           headers: {
