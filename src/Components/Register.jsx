@@ -5,6 +5,7 @@ export const Register = () => {
 
     const [inputEmail, setInputEmail] = React.useState("");
     const [inputTitle, setInputTitle] = React.useState("");
+    const [inputPassword, setInputPassword] = React.useState("");
     const [inputTos, setInputTos] = React.useState("");
 
     let email = (e) => {
@@ -15,6 +16,11 @@ export const Register = () => {
     let title = (e) => {
         const newTitle = e.target.value;
         setInputTitle(newTitle);
+    };
+
+    let password = (e) => {
+        const newPassword = e.target.value;
+        setInputPassword(newPassword);
     };
 
     let tos = (e) => {
@@ -29,6 +35,7 @@ export const Register = () => {
             userId: "",
             title: inputTitle,
             email: inputEmail,
+            password: "",
             tos: inputTos
           }),
           headers: {
@@ -72,6 +79,10 @@ export const Register = () => {
             <div className='form_two'>
                 <p>Email</p>
                 <input type="email" id='email' onChange={email}/>
+            </div>
+            <div className='form_three'>
+                <p>Email</p>
+                <input type="password" id='password' onChange={password}/>
             </div>
         </div>
         <small>ALL FORM FIELDS ARE MANDATORY</small>
