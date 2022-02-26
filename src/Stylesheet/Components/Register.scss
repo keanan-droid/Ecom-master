@@ -30,6 +30,8 @@
         }
     }
 
+    & > form {
+
     & > .registerForm_two {
         display: flex;
         flex-direction: column;
@@ -91,6 +93,7 @@
             }
         }
     }
+}
 
     & > .registerForm_five {
         display: flex;

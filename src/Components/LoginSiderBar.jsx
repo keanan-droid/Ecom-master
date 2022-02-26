@@ -28,6 +28,19 @@ export const LoginSiderBar = ({isSideBarOpen, setIsSideBarOpen}) => {
     navigate(path);
   }
 
+  React.useEffect(() => {
+    fetch("http://localhost:3004/accounts")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+    console.log(JSON.stringify(data));
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
+
   return (
     <div className="LoginSiderBar">
       <div className="login">

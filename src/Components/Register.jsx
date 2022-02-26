@@ -7,6 +7,11 @@ export const Register = () => {
     const [inputTitle, setInputTitle] = React.useState("");
     const [inputPassword, setInputPassword] = React.useState("");
     const [inputTos, setInputTos] = React.useState("");
+    const [details, setDetails] = React.useState({title:"", email:"", password:"", tos:""});
+
+    const handelOnchange = (e) => {
+         
+    }
 
     let email = (e) => {
         const newEmail = e.target.value;
@@ -28,7 +33,7 @@ export const Register = () => {
         setInputTos(newTos);
     };
 
-    async function postData(url = 'db.json', data = {}) {
+    async function postData(url = "../../db.json", data = {}) {
         const response = await fetch(url, {
           method: 'POST',
           body: JSON.stringify({
@@ -46,19 +51,6 @@ export const Register = () => {
         return response.json()
     }
 
-    React.useEffect(() => {
-        fetch("http://localhost:3004/accounts")
-        .then((response) => {
-          return response.json();
-        })
-        .then((data) => {
-        console.log(JSON.stringify(data));
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    });
-
   return (
     <main className='registerForm'>
         <div className='registerForm_one'>
@@ -71,40 +63,42 @@ export const Register = () => {
                 <h1>CREATE AN ACCOUNT</h1>
             </div>
         </div>
-        <div className='registerForm_two'>
-            <div className='form_one'>
-                <p>Title</p>
-                <input type="text" id='title' onChange={title}/>
+        <form action="">
+            <div className='registerForm_two'>
+                <div className='form_one'>
+                    <p>Title</p>
+                    <input type="text" id='title' onChange={title}/>
+                </div>
+                <div className='form_two'>
+                    <p>Email</p>
+                    <input type="email" id='email' onChange={email}/>
+                </div>
+                <div className='form_three'>
+                    <p>Password</p>
+                    <input type="password" id='password' onChange={password}/>
+                </div>
             </div>
-            <div className='form_two'>
-                <p>Email</p>
-                <input type="email" id='email' onChange={email}/>
+            <small>ALL FORM FIELDS ARE MANDATORY</small>
+            <div className='registerForm_three'>
+                <h2>CONSENT TO PERSONAL DATA PROCESSING</h2>
+                <p>I confirm that I am of legal age, that have read the information provided by the Data Controller in accordance with local applicable laws, and that I understand that the provision of my personal data for profiling and marketing purposes is optional and it is not required to process a credit card transaction and I:</p>
             </div>
-            <div className='form_three'>
-                <p>Email</p>
-                <input type="password" id='password' onChange={password}/>
+            <div className='registerForm_four'>
+                <div>
+                    <input type="checkbox" onChange={tos}/>
+                    <p id='tos'>I agree</p>  
+                </div>
+                <div>
+                    <input type="checkbox" onChange={tos}/>
+                    <p id='tos'>I don't agree</p> 
+                </div>
             </div>
-        </div>
-        <small>ALL FORM FIELDS ARE MANDATORY</small>
-        <div className='registerForm_three'>
-            <h2>CONSENT TO PERSONAL DATA PROCESSING</h2>
-            <p>I confirm that I am of legal age, that have read the information provided by the Data Controller in accordance with local applicable laws, and that I understand that the provision of my personal data for profiling and marketing purposes is optional and it is not required to process a credit card transaction and I:</p>
-        </div>
-        <div className='registerForm_four'>
-            <div>
-                <input type="checkbox" onChange={tos}/>
-                <p id='tos'>I agree</p>  
-            </div>
-            <div>
-                <input type="checkbox" onChange={tos}/>
-                <p id='tos'>I don't agree</p> 
-            </div>
-        </div>
+        </form>
         <div className='registerForm_five'>
             <p>On subscription you accept our<span>Privacy Policy</span></p>
         </div>
         <div className='registerForm_six'>
-            <button onChange={postData}>Apply</button>
+            <button onClick={postData}>Apply</button>
         </div>
     </main>
   )
