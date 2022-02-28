@@ -43,7 +43,7 @@
             justify-content: space-between;
             padding-bottom: 1em;
             
-            & > p {
+            & > label {
                 font-size: 0.9em;
                 margin-top: 1em;
             }
@@ -93,33 +93,38 @@
             }
         }
     }
+
+    & > div {
+
+        & > .registerForm_five {
+            display: flex;
+            margin-left: 32em;
+            margin-top: 2em;
+            width: 400px;
+        }
+    
+        & >.registerForm_six {
+            
+            & > button {
+                display: flex;
+                justify-content: center;
+                margin-left: 53em;
+                margin-top: 2em;
+                padding: 0.8em;
+                width: 123px;
+                font-size: 1em;
+                color: white;
+                background-color: black;
+                border: 1px solid black;
+            }
+    
+            & > button:hover {
+                color: black;
+                background-color: white;
+            }
+        }
+    }
 }
 
-    & > .registerForm_five {
-        display: flex;
-        margin-left: 32em;
-        margin-top: 2em;
-        width: 400px;
-    }
-
-    & >.registerForm_six {
-        
-        & > button {
-            display: flex;
-            justify-content: center;
-            margin-left: 53em;
-            margin-top: 2em;
-            padding: 0.8em;
-            width: 123px;
-            font-size: 1em;
-            color: white;
-            background-color: black;
-            border: 1px solid black;
-        }
-
-        & > button:hover {
-            color: black;
-            background-color: white;
-        }
-    }
+    
 }

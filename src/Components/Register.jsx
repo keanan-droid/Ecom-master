@@ -2,53 +2,38 @@ import React from 'react'
 import "../Stylesheet/Components/Register.scss";
 
 export const Register = () => {
+    const [ isError, setIsError ] = React.useState("")
 
-    const [inputEmail, setInputEmail] = React.useState("");
-    const [inputTitle, setInputTitle] = React.useState("");
-    const [inputPassword, setInputPassword] = React.useState("");
-    const [inputTos, setInputTos] = React.useState("");
-    const [details, setDetails] = React.useState({title:"", email:"", password:"", tos:""});
-
-    const handelOnchange = (e) => {
-         
+    const validation = (data) => {
+        fetch("http://localhost:3004/accounts")
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            for (let i = 0; i < data.length; i++) {
+                const account = data[i];
+                
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+        });
     }
 
-    let email = (e) => {
-        const newEmail = e.target.value;
-        setInputEmail(newEmail);
-    };
-
-    let title = (e) => {
-        const newTitle = e.target.value;
-        setInputTitle(newTitle);
-    };
-
-    let password = (e) => {
-        const newPassword = e.target.value;
-        setInputPassword(newPassword);
-    };
-
-    let tos = (e) => {
-        const newTos = e.target.value;
-        setInputTos(newTos);
-    };
-
-    async function postData(url = "../../db.json", data = {}) {
-        const response = await fetch(url, {
-          method: 'POST',
-          body: JSON.stringify({
-            userId: "",
-            title: inputTitle,
-            email: inputEmail,
-            password: inputPassword,
-            tos: inputTos
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-        return response.json()
+    const handelSubmit = (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target)
+        console.log(Object.fromEntries(data.entries()))
+        validation();
+        fetch("http://localhost:3004/accounts", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Object.fromEntries(data.entries())),
+            }).then(() => {
+                console.log("NEW ACCOUNT ADDED");
+            })
     }
 
   return (
@@ -63,19 +48,22 @@ export const Register = () => {
                 <h1>CREATE AN ACCOUNT</h1>
             </div>
         </div>
-        <form action="">
+        <form onSubmit={handelSubmit}>
             <div className='registerForm_two'>
                 <div className='form_one'>
-                    <p>Title</p>
-                    <input type="text" id='title' onChange={title}/>
+                    <label>Title</label>
+                    <input type="text" 
+                    name='title' />
                 </div>
                 <div className='form_two'>
-                    <p>Email</p>
-                    <input type="email" id='email' onChange={email}/>
+                    <label>Email</label>
+                    <input type="email" 
+                    name='email' />
                 </div>
                 <div className='form_three'>
-                    <p>Password</p>
-                    <input type="password" id='password' onChange={password}/>
+                    <label>Password</label>
+                    <input type="password" 
+                    name='password' />
                 </div>
             </div>
             <small>ALL FORM FIELDS ARE MANDATORY</small>
@@ -85,21 +73,25 @@ export const Register = () => {
             </div>
             <div className='registerForm_four'>
                 <div>
-                    <input type="checkbox" onChange={tos}/>
+                    <input type="checkbox" 
+                    name='true'/>
                     <p id='tos'>I agree</p>  
                 </div>
                 <div>
-                    <input type="checkbox" onChange={tos}/>
+                    <input type="checkbox" 
+                    name='false'/>
                     <p id='tos'>I don't agree</p> 
                 </div>
             </div>
+            <div>
+                <div className='registerForm_five'>
+                    <p>On subscription you accept our<span>Privacy Policy</span></p>
+                </div>
+                <div className='registerForm_six'>
+                    <button>Apply</button>
+                </div>
+            </div>
         </form>
-        <div className='registerForm_five'>
-            <p>On subscription you accept our<span>Privacy Policy</span></p>
-        </div>
-        <div className='registerForm_six'>
-            <button onClick={postData}>Apply</button>
-        </div>
     </main>
   )
 }
